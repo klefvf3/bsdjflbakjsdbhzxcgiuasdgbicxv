@@ -1,0 +1,96 @@
+body {
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    color: white;
+    text-shadow: 2px 2px #000;
+}
+
+.center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.info {
+    z-index: 999999;
+}
+
+.begin {
+    cursor: pointer;
+}
+
+#overlay {
+    position: fixed;
+    z-index: 9999;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#data,
+#shoutout_marquee {
+    transition: opacity 2s ease-in-out;
+}
+
+#swarm {
+    display: block;
+}
+
+.marquee {
+    width: 100%;
+    max-width: 450px;
+    line-height: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.marquee p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .center {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .logo-blur {
+        font-size: 30px !important;
+    }
+
+    .marquee {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    #data a {
+        display: block;
+        font-size: 18px;
+        margin: 5px 0;
+    }
+}
